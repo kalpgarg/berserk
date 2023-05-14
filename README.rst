@@ -137,6 +137,7 @@ Most of the API is available:
 
     client.tournaments.get
     client.tournaments.get_tournament
+    client.tournaments.get_tournament_teams
     client.tournaments.create_arena
     client.tournaments.create_swiss
     client.tournaments.export_arena_games

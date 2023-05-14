@@ -1172,6 +1172,16 @@ class Tournaments(FmtClient):
         path = f"api/tournament/{tournament_id}?page={page}"
         return self._r.get(path, converter=models.Tournament.convert)
 
+    def get_tournament_teams(self, tournament_id: str) -> Dict[str, Any]:
+        """
+        Get teams of team battle tournament, sorted by rank(best first)
+
+        :param tournament_id(required) - ID of tournament
+        :return The list of teams in a team battle tournament.
+        """
+        path = f"api/tournament/{tournament_id}/teams"
+        return self._r.get(path, fmt=LIJSON, converter=models.Tournament.convert)
+
     def create_arena(
         self,
         clockTime: int,
